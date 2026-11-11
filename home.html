@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="hi" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ganga Dwar Chhath Puja Samiti</title>
+  <link rel="icon" href="assets/images/logo.png" type="image/png" />
+  <link rel="stylesheet" href="home.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+</head>
+
+<body class="home-body">
+
+  <!-- ============================================================
+       A. TOP HEADER
+       ============================================================ -->
+  <header class="top-header" id="topHeader">
+    <div class="top-header-inner">
+      <a href="#homeSection" class="brand">
+        <img src="assets/images/logo.png" alt="Logo" class="brand-logo" />
+        <span class="brand-text" data-i18n="brandName">गंगा द्वार छठ पूजा समिति</span>
+      </a>
+
+      <div class="header-socials">
+        <a id="instagramBtn" class="social-btn instagram" href="#" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-instagram"></i> <span>Instagram</span>
+        </a>
+        <a id="facebookBtn" class="social-btn facebook" href="#" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-facebook-f"></i> <span>Facebook</span>
+        </a>
+        <a id="youtubeBtn" class="social-btn youtube" href="#" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-youtube"></i> <span>YouTube</span>
+        </a>
+      </div>
+
+      <div class="header-controls">
+        <div class="lang-switch">
+          <button id="langHiBtn" class="lang-btn active" type="button">हिंदी</button>
+          <button id="langEnBtn" class="lang-btn" type="button">English</button>
+        </div>
+        <button id="themeToggleBtn" class="theme-btn" type="button" aria-label="Toggle dark mode">
+          <i id="themeIcon" class="fa-solid fa-moon"></i> <span class="theme-text">Dark Mode</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       B. NAVIGATION BAR
+       ============================================================ -->
+  <nav class="navbar" id="mainNav">
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#homeSection" class="nav-btn active">Home</a>
+      <a href="#feedbackSection" class="nav-btn">Feedback</a>
+      <a href="#historySection" class="nav-btn">History</a>
+      <a href="#gallerySection" class="nav-btn">Gallery</a>
+      <a href="#facilitiesSection" class="nav-btn">Facilities</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       C. HERO SECTION
+       ============================================================ -->
+  <section class="hero" id="homeSection">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto">
+      <source src="assets/videos/chhath-bg.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <h1 class="hero-title" data-i18n="heroTitle">गंगा द्वार छठ पूजा समिति</h1>
+      <p class="hero-subtitle" data-i18n="heroSubtitle">छठ पूजा — आस्था, श्रद्धा और परंपरा का महापर्व</p>
+      
+      <!-- Live Button -->
+      <div class="live-wrapper">
+        <button id="liveBtn" class="live-btn" type="button">
+          <div class="live-dots">
+            <span class="dot-small"></span>
+            <span class="dot-big"></span>
+          </div>
+          <span id="liveText" data-i18n="liveGoLive">Go Live</span>
+        </button>
+        <p class="live-note" data-i18n="liveNote">(Live coming soon)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       D. FEEDBACK SECTION
+       ============================================================ -->
+  <section class="section feedback-section" id="feedbackSection">
+    <div class="container">
+      <h2 class="section-title" data-i18n="feedbackTitle">Give Me Your Feedback</h2>
+      <p class="section-lead" data-i18n="feedbackLead">कृपया नीचे दिए गए बटन पर क्लिक करके अपना सुझाव दें।</p>
+
+      <!-- Permanent Animated Feedback Button -->
+      <div class="feedback-btn-container">
+        <a href="#" id="googleFeedbackLink" target="_blank" class="animated-feedback-btn">
+          <span class="hand-icon left-hand">👉</span>
+          <span class="btn-text">📝 Give me your feedback</span>
+          <span class="hand-icon right-hand">👈</span>
+          <div class="glow-border"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       E. HISTORY SECTION (Background + Accordion)
+       ============================================================ -->
+  <section class="section history-section" id="historySection">
+    <div class="history-bg-overlay"></div>
+    <div class="container relative-z">
+      <h2 class="section-title" data-i18n="historyTitle">छठ पूजा का इतिहास</h2>
+      <p class="section-lead" data-i18n="historyLead">छठ पूजा के बारे में जानने के लिए नीचे दिए गए प्रश्नों पर क्लिक करें।</p>
+
+      <div class="accordion-wrapper">
+        
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            <span data-i18n="historyQ1">1. छठ पूजा किस देवता को समर्पित है?</span>
+            <i class="fa-solid fa-chevron-down icon"></i> <!-- Down Arrow Icon -->
+          </button>
+          <div class="accordion-content">
+            <p data-i18n="historyA1">छठ पूजा सूर्य देव और छठी मैया की उपासना का महापर्व है। इसमें डूबते और उगते सूर्य दोनों की पूजा की जाती है।</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            <span data-i18n="historyQ2">2. छठ पूजा का इतिहास कितना पुराना है?</span>
+            <i class="fa-solid fa-chevron-down icon"></i>
+          </button>
+          <div class="accordion-content">
+            <p data-i18n="historyA2">यह पर्व अत्यंत प्राचीन है। माना जाता है कि यह वैदिक काल से भी पहले का है। रामायण और महाभारत काल में भी इसका उल्लेख मिलता है।</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            <span data-i18n="historyQ3">3. छठ पूजा में कितने दिनों का व्रत रखा जाता है?</span>
+            <i class="fa-solid fa-chevron-down icon"></i>
+          </button>
+          <div class="accordion-content">
+            <p data-i18n="historyA3">छठ पूजा का व्रत चार दिनों तक चलता है। इसमें नहाय खाय, खरना, संध्या अर्घ्य और उषा अर्घ्य शामिल हैं।</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            <span data-i18n="historyQ4">4. छठ पूजा में अर्घ्य क्यों दिया जाता है?</span>
+            <i class="fa-solid fa-chevron-down icon"></i>
+          </button>
+          <div class="accordion-content">
+            <p data-i18n="historyA4">सूर्य देव को जीवन शक्ति और ऊर्जा का स्रोत माना जाता है। अर्घ्य देकर हम उनका आभार व्यक्त करते हैं और संतान के सुख-समृद्धि की कामना करते हैं।</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            <span data-i18n="historyQ5">5. छठ पूजा सबसे पहले किसने मनाई थी?</span>
+            <i class="fa-solid fa-chevron-down icon"></i>
+          </button>
+          <div class="accordion-content">
+            <p data-i18n="historyA5">पौराणिक मान्यताओं के अनुसार, राजा प्रियव्रत को सबसे पहले छठ पूजा करने वाला माना जाता है।</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       F. GALLERY SECTION (Background Applied)
+       ============================================================ -->
+  <section class="section gallery-section" id="gallerySection">
+    <div class="gallery-bg-overlay"></div>
+    <div class="container relative-z">
+      <h2 class="section-title" data-i18n="galleryTitle">छठ पूजा फोटो गैलरी</h2>
+      <p class="section-lead" data-i18n="galleryLead">समिति की ओर से आयोजित छठ पूजा के कुछ यादगार क्षण।</p>
+
+      <div class="gallery-grid" id="galleryGrid"></div>
+
+      <div class="gallery-action">
+        <a href="#" id="googleAddPhotoLink" target="_blank" class="btn btn-gold">+ ADD YOUR PHOTOS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       G. FACILITIES SECTION (Background Applied)
+       ============================================================ -->
+  <section class="section facilities-section" id="facilitiesSection">
+    <div class="facilities-bg-overlay"></div>
+    <div class="container relative-z">
+      <h2 class="section-title" data-i18n="facilitiesTitle">हमारी सुविधाएँ</h2>
+      <p class="section-lead" data-i18n="facilitiesLead">श्रद्धालुओं की सुविधा के लिए समिति द्वारा उपलब्ध कराई जाने वाली सेवाएँ।</p>
+
+      <div class="facilities-grid">
+        <div class="facility-card">
+          <i class="fa-solid fa-person-dress facility-icon"></i>
+          <h3 data-i18n="facility1">चेंजिंग रूम</h3>
+        </div>
+                <div class="facility-card">
+          <i class="fa-solid fa-lightbulb facility-icon"></i> <!-- लाइट का आइकॉन -->
+          <h3 data-i18n="facility2">लाइटिंग</h3> <!-- नाम बदलकर लाइटिंग कर दिया -->
+        </div>
+        <div class="facility-card">
+          <i class="fa-solid fa-tooth facility-icon"></i>
+          <h3 data-i18n="facility3">दंतवन व्यवस्था</h3>
+        </div>
+        <div class="facility-card">
+          <i class="fa-solid fa-basket-shopping facility-icon"></i>
+          <h3 data-i18n="facility4">गोइठा बिक्री</h3>
+        </div>
+        <div class="facility-card">
+          <i class="fa-solid fa-palette facility-icon"></i>
+          <h3 data-i18n="facility5">मूर्ति सजावट</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ============================================================
+       H. FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-cards">
+        
+        <!-- CARD 1: समिति प्रमुख विवरण -->
+        <div class="footer-card">
+          <h3 class="footer-card-title" data-i18n="footerCard1Title">समिति प्रमुख विवरण</h3>
+          <ul class="footer-card-list">
+            <li><i class="fa-solid fa-crown"></i> <span data-i18n="footerLeaderName">बिट्टू साह</span></li>
+            <li><i class="fa-solid fa-phone"></i> <a href="tel:+917780095251">7780095251</a></li>
+            <li><i class="fa-solid fa-briefcase"></i> <span data-i18n="footerLeaderPosition">अध्यक्ष, गंगा द्वार छठ पूजा समिति</span></li>
+          </ul>
+        </div>
+
+        <!-- CARD 2: Developed By -->
+        <div class="footer-card">
+          <h3 class="footer-card-title" data-i18n="footerCard2Title">Developed By</h3>
+          <ul class="footer-card-list">
+            <li><i class="fa-solid fa-laptop-code"></i> <span data-i18n="footerDevName">Abhishek Kumar</span></li>
+            <li><i class="fa-solid fa-phone"></i> <a href="tel:+919006744604">9006744604</a></li>
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:guptaabhishek63501@gmail.com">guptaabhishek63501@gmail.com</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p><i class="fa-solid fa-location-dot"></i> <span data-i18n="footerLocation">मुरौवतपुर, बिहार</span></p>
+        <p data-i18n="footerCopyright">© 2026 Ganga Dwar Chhath Puja Samiti. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Audio Controls (Only Cracker Sound) -->
+  <div class="audio-controls">
+    <button id="crackerToggleBtn" class="audio-btn" type="button" aria-pressed="false" title="Crackers sound">
+      <i id="crackerIcon" class="fa-solid fa-bomb"></i>
+    </button>
+  </div>
+
+  <!-- 🎵 सही किए गए ऑडियो टैग (डुप्लीकेट हटा दिए गए हैं और आवाज़ जोड़ दी गई है) -->
+  <audio id="crackerSound" src="assets/audio/crackers-sound.mp3" loop preload="auto"></audio>
+  <audio id="welcomeVoiceHome" src="assets/audio/welcome-voice.mp3" preload="auto"></audio>
+
+  <!-- Image Lightbox Modal (For Zooming Images) -->
+  <div id="imageLightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightboxImg" alt="Zoomed Photo">
+  </div>
+
+  <script src="home.js"></script>
+</body>
+</html>

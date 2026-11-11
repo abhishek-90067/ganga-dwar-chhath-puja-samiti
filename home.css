@@ -1,0 +1,343 @@
+/* ============================================================
+   GANGA DWAR CHHATH PUJA SAMITI
+   home.css — Full UI Updates
+   ============================================================ */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #d4af37;
+  --gold-light: #f5d76e;
+  --gold-dark: #a8871f;
+  --red-text: #a82727; /* Slightly deeper red for better visibility */
+
+  --bg: #fffaf0;
+  --bg-alt: #fff5e1;
+  --bg-card: #ffffff;
+  --text: #222222;
+  --text-muted: #555555;
+  --border: rgba(212, 175, 55, 0.4);
+  
+  --font-main: "Noto Sans Devanagari", "Poppins", "Segoe UI", system-ui, sans-serif;
+  --container: 1180px;
+  --transition: 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --bg-alt: #1a1a1a;
+  --bg-card: #222222;
+  --text: #f1f1f1;
+  --text-muted: #aaaaaa;
+  --border: rgba(212, 175, 55, 0.3);
+  --red-text: #ff7b7b;
+}
+
+.home-body { font-family: var(--font-main); background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; }
+
+.container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+.relative-z { position: relative; z-index: 2; }
+
+/* HEADER */
+.top-header { background: var(--bg-alt); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
+.top-header-inner { display: flex; align-items: center; justify-content: space-between; gap: 10px; max-width: var(--container); margin: 0 auto; padding: 12px 20px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 1.1rem; color: var(--gold); }
+.brand-logo { height: 38px; width: 38px; border-radius: 50%; border: 2px solid var(--gold); }
+.brand-text { color: var(--text); }
+
+.header-socials { display: flex; gap: 8px; }
+.social-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 999px; color: #fff; font-size: 0.85rem; font-weight: 600; transition: all var(--transition); }
+.social-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
+.social-btn.instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+.social-btn.facebook { background: #1877f2; }
+.social-btn.youtube { background: #ff0000; }
+
+.header-controls { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.lang-switch { display: flex; border: 1px solid var(--gold); border-radius: 999px; overflow: hidden; background: var(--bg); }
+.lang-btn { background: transparent; border: none; padding: 8px 16px; font-size: 0.85rem; font-weight: 700; color: var(--text); transition: all var(--transition); }
+.lang-btn.active { background: var(--gold); color: #fff; }
+.theme-btn { display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--gold); background: var(--bg); color: var(--text); font-weight: 700; font-size: 0.85rem; }
+.theme-btn:hover { background: var(--gold); color: #fff; }
+
+/* NAVBAR */
+.navbar { background: var(--bg); border-bottom: 2px solid var(--border); position: sticky; top: 70px; z-index: 40; padding: 12px 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
+.nav-links { display: flex; justify-content: center; gap: 12px; max-width: var(--container); margin: 0 auto; }
+.nav-btn { padding: 10px 24px; font-weight: 700; font-size: 0.95rem; color: var(--text); background: #fff; border: 1.5px solid var(--border); border-radius: 999px; transition: all var(--transition); }
+.nav-btn:hover, .nav-btn.active { background: var(--gold); color: #fff; border-color: var(--gold); box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); }
+.nav-toggle { display: none; font-size: 1.5rem; background: transparent; border: none; color: var(--text); width: 100%; text-align: left; }
+
+/* HERO */
+.hero { position: relative; width: 100%; min-height: 85vh; display: flex; align-items: center; justify-content: center; background: #000; }
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); z-index: 1; }
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 40px 20px; max-width: 900px; }
+.hero-title { font-size: clamp(2rem, 5vw, 4rem); font-weight: 700; color: var(--gold-light); text-shadow: 0 0 15px rgba(212,175,55,0.8); }
+.hero-subtitle { margin-top: 16px; font-size: clamp(1rem, 2vw, 1.3rem); color: #f1e8c5; }
+
+/* WATCH LIVE BUTTON (New Dots Animation) */
+.live-wrapper { margin-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.live-btn {
+  display: inline-flex; align-items: center; gap: 12px; padding: 10px 26px;
+  background: rgba(30, 0, 0, 0.6); border: 2px solid #ff0000; color: #ff9999; border-radius: 999px; font-size: 1.1rem; font-weight: 700; transition: all var(--transition);
+}
+.live-btn:hover { background: rgba(255, 0, 0, 0.2); }
+.live-note { color: #ffcccc; font-size: 0.9rem; font-style: italic; }
+
+/* Live Dots Animation */
+.live-dots { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.dot-small, .dot-big { display: inline-block; border-radius: 50%; background: #ff0000; box-shadow: 0 0 10px #ff0000; }
+.dot-small { width: 10px; height: 10px; animation: pulseSmall 1.5s infinite alternate; }
+.dot-big { width: 16px; height: 16px; animation: pulseBig 1.5s infinite alternate; }
+
+@keyframes pulseSmall {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+@keyframes pulseBig {
+  0% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(0.7); opacity: 0.5; }
+}
+
+/* SHARED SECTIONS */
+.section { padding: 70px 0; position: relative; }
+.section-title { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; text-align: center; color: var(--text); margin-bottom: 10px; }
+.section-title::after { content: ""; display: block; width: 80px; height: 4px; margin: 12px auto 0; background: var(--gold); border-radius: 4px; }
+.section-lead { text-align: center; color: var(--text-muted); max-width: 720px; margin: 0 auto 36px; font-size: 1rem; }
+
+/* ============================================================
+   FEEDBACK BUTTON (Permanent Fast Animation)
+   ============================================================ */
+.feedback-section { background: var(--bg-alt); }
+.feedback-btn-container { display: flex; justify-content: center; margin-top: 20px; }
+
+.animated-feedback-btn {
+  position: relative; 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 15px;
+  padding: 18px 40px; 
+  
+  /* Permanent Colourful Background */
+  background: linear-gradient(45deg, #0500ff, #a200ff, #ff007b, #0500ff);
+  background-size: 300% 300%;
+  color: #f5d76e; /* Golden Text */
+  font-size: 1.3rem; 
+  font-weight: 700;
+  border-radius: 12px; 
+  overflow: hidden; 
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 25px rgba(162, 0, 255, 0.4);
+  
+  /* ⚡ PERMANENT FAST ANIMATION (0.5 seconds) ⚡ */
+  animation: blinkGradient 0.5s linear infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* माउस ले जाने पर बटन थोड़ा बड़ा और चमकीला होगा, लेकिन स्पीड वही रहेगी */
+.animated-feedback-btn:hover { 
+  transform: translateY(-4px) scale(1.02); 
+  box-shadow: 0 12px 35px rgba(162, 0, 255, 0.8);
+}
+
+/* बैकग्राउंड ब्लिंक/मूव करने का एनिमेशन */
+@keyframes blinkGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* हाथ वाले इमोजी */
+.animated-feedback-btn .hand-icon { 
+  font-size: 1.5rem; 
+  animation: pointHand 1s infinite alternate ease-in-out; 
+}
+.animated-feedback-btn .left-hand { animation-name: pointLeft; }
+.animated-feedback-btn .right-hand { animation-name: pointRight; }
+
+@keyframes pointLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-8px); } }
+@keyframes pointRight { 0% { transform: translateX(0); } 100% { transform: translateX(8px); } }
+
+/* HISTORY SECTION (Background Image) */
+.history-section {
+  background: url('https://images.unsplash.com/photo-1621251217721-9789f53986d5?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat fixed;
+}
+.history-bg-overlay { position: absolute; inset: 0; background: rgba(255, 250, 240, 0.85); z-index: 1; }
+[data-theme="dark"] .history-bg-overlay { background: rgba(18, 18, 18, 0.9); }
+
+/* Accordion (Down Arrow Icon + Nice Text Color) */
+.accordion-wrapper { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+.accordion-item { background: var(--bg-card); border: 2px solid var(--gold); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15); transition: all 0.3s ease; }
+.accordion-item.active { box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3); }
+
+.accordion-header {
+  width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px; background: transparent; border: none; font-size: 1.1rem;
+  font-weight: 700; color: var(--red-text); text-align: left; cursor: pointer;
+}
+.accordion-header .icon { font-size: 1.2rem; color: var(--gold-dark); transition: transform 0.3s ease; }
+.accordion-item.active .icon { transform: rotate(180deg); } /* Arrow turns up */
+
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out; }
+.accordion-item.active .accordion-content { max-height: 300px; }
+.accordion-content p { padding: 0 20px 20px; color: var(--text-muted); font-size: 1rem; border-top: 1px dashed var(--border); padding-top: 15px; margin: 0 20px 20px; }
+
+/* ============================================================
+   HISTORY TITLE (Premium Center Box with Background & Border)
+   ============================================================ */
+#historySection .section-title {
+  display: table; /* टेक्स्ट के हिसाब से साइज़ लेगा लेकिन बीच में रहेगा */
+  width: fit-content;
+  margin: 0 auto 25px auto; /* बीच में लाने के लिए (0 auto) और नीचे गैप */
+  
+  /* Premium Background (सुनहरा और सफ़ेद ग्रेडिएंट) */
+  background: linear-gradient(135deg, #fffdf5 0%, #fff5d6 100%);
+  padding: 18px 50px; /* बॉक्स के अंदर की जगह */
+  
+  /* Golden Border */
+  border: 3px solid var(--gold);
+  border-radius: 16px; /* गोल कोने */
+  
+  /* Beautiful Glow & Shadow */
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25), inset 0 0 15px rgba(255, 255, 255, 0.8);
+  
+  /* Text Style */
+  color: #a82727; /* अच्छा सा लाल/मैरून रंग */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+/* डार्क मोड में बैकग्राउंड और टेक्स्ट का रंग */
+[data-theme="dark"] #historySection .section-title {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  color: var(--gold-light);
+  border-color: var(--gold-light);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+}
+
+/* टाइटल के नीचे जो गोल्डन लाइन है, उसे बिल्कुल बीच में लाने के लिए */
+#historySection .section-title::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  margin: 12px auto 0 auto; 
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+/* मोबाइल के लिए (ताकि स्क्रीन से बाहर न जाए) */
+@media (max-width: 768px) {
+  #historySection .section-title {
+    padding: 15px 25px;
+    font-size: 1.4rem;
+    width: 90%;
+  }
+}
+
+/* GALLERY SECTION (Background Image) */
+.gallery-section {
+  background: url('https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat fixed;
+}
+.gallery-bg-overlay { position: absolute; inset: 0; background: rgba(255, 255, 255, 0.9); z-index: 1; }
+[data-theme="dark"] .gallery-bg-overlay { background: rgba(18, 18, 18, 0.9); }
+
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.gallery-item { aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; border: 2px solid var(--border); background: var(--bg-card); cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-item.missing { display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.9rem; }
+.gallery-action { text-align: center; margin-top: 36px; }
+
+.btn-gold { display: inline-flex; padding: 14px 36px; background: var(--gold); color: #fff; border-radius: 999px; font-weight: 700; font-size: 1rem; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); transition: all var(--transition); }
+.btn-gold:hover { background: var(--gold-dark); transform: translateY(-3px); }
+
+/* FACILITIES SECTION (Background Image) */
+.facilities-section {
+  background: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat fixed;
+}
+.facilities-bg-overlay { position: absolute; inset: 0; background: rgba(255, 250, 240, 0.92); z-index: 1; }
+[data-theme="dark"] .facilities-bg-overlay { background: rgba(18, 18, 18, 0.92); }
+
+.facilities-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.facility-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 30px 15px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: all var(--transition); }
+.facility-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+.facility-icon { font-size: 2.2rem; color: var(--gold-dark); margin-bottom: 12px; display: inline-block; }
+.facility-card h3 { font-size: 1rem; font-weight: 700; color: var(--text); }
+
+/* ============================================================
+   FOOTER CARDS (Fast Blinking Background like Feedback Button)
+   ============================================================ */
+.site-footer { background: #000; color: #fff; padding: 60px 0 20px; border-top: 2px solid var(--gold); }
+.footer-inner { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+.footer-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 50px; }
+
+.footer-card { 
+  position: relative; 
+  padding: 30px; 
+  border-radius: 16px; 
+  
+  /* यहाँ Colour Gradient सेट किया गया है */
+  background: linear-gradient(45deg, #3b0a5c, #7b1fa2, #c2185b, #e91e63, #3b0a5c);
+  background-size: 300% 300%;
+  
+  border: 2px solid rgba(255, 105, 180, 0.8); 
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.5), inset 0 0 15px rgba(255,255,255,0.1); 
+  
+  /* ⚡ यह लाइन रंग को फ़ास्ट ब्लिंक कराएगी ⚡ */
+  animation: blinkGradient 1.5s linear infinite;
+}
+
+/* ब्लिंक करने का एनिमेशन */
+@keyframes blinkGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.footer-card-title { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.footer-card-title::after { content: ""; display: block; width: 60px; height: 3px; margin-top: 10px; background: var(--gold-light); }
+.footer-card-list { margin-top: 20px; display: flex; flex-direction: column; gap: 14px; }
+.footer-card-list li { display: flex; align-items: center; gap: 12px; font-size: 1rem; color: #fff; }
+.footer-card-list i { color: var(--gold-light); font-size: 1.2rem; }
+.footer-card-list a { color: #fff; border-bottom: 1px dashed rgba(255,255,255,0.5); }
+.footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; color: #ccc; display: flex; flex-direction: column; gap: 8px; }
+.footer-bottom i { color: var(--gold); }
+
+/* AUDIO CONTROLS */
+.audio-controls { position: fixed; bottom: 24px; right: 24px; display: flex; flex-direction: column; gap: 12px; z-index: 500; }
+.audio-btn { width: 50px; height: 50px; border-radius: 50%; background: var(--gold); color: #fff; border: 2px solid #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 1.1rem; display: flex; align-items: center; justify-content: center; transition: all var(--transition); }
+.audio-btn.active { background: #ff5722; }
+
+/* LIGHTBOX (Image Zoom) */
+.lightbox { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); align-items: center; justify-content: center; padding: 20px; }
+.lightbox.active { display: flex; }
+.lightbox-content { max-width: 90%; max-height: 90vh; border-radius: 8px; box-shadow: 0 0 30px rgba(255,255,255,0.2); animation: zoomIn 0.3s ease; }
+@keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.lightbox-close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.lightbox-close:hover { color: var(--gold); }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .facilities-grid { grid-template-columns: repeat(3, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .header-socials span { display: none; }
+  .social-btn { padding: 10px; border-radius: 50%; width: 38px; height: 38px; justify-content: center; }
+}
+@media (max-width: 768px) {
+  .top-header-inner { flex-direction: column; gap: 12px; }
+  .brand, .header-controls { width: 100%; justify-content: center; }
+  .navbar { top: 120px; padding: 8px; }
+  .nav-toggle { display: block; }
+  .nav-links { display: none; flex-direction: column; gap: 8px; padding: 10px 0; }
+  .nav-links.open { display: flex; }
+  .footer-cards { grid-template-columns: 1fr; }
+  .facilities-grid { grid-template-columns: repeat(2, 1fr); }
+  .animated-feedback-btn { flex-direction: column; padding: 20px; font-size: 1.1rem; }
+}
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .facility-card { padding: 20px 10px; }
+}
