@@ -1,0 +1,185 @@
+/* ============================================================
+   GANGA DWAR CHHATH PUJA SAMITI
+   style.css  —  Starting / Welcome Page Styles
+   ============================================================ */
+
+/* ---------- 1. GLOBAL RESET ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- 2. CSS VARIABLES ---------- */
+:root {
+  --gold: #d4af37;
+  --gold-light: #f5d76e;
+  --gold-glow: rgba(212, 175, 55, 0.75);
+  --black: #000000;
+  --white: #ffffff;
+  --overlay-dark: rgba(0, 0, 0, 0.62);
+
+  --font-main: "Noto Sans Devanagari", "Poppins", "Segoe UI", system-ui, sans-serif;
+}
+
+/* ---------- 3. WELCOME PAGE BODY ---------- */
+.welcome-body {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+  font-family: var(--font-main);
+  color: var(--white);
+  background: var(--black);
+  cursor: pointer; /* पूरी स्क्रीन पर क्लिक करने का संकेत */
+}
+
+/* ---------- 4. FULL-SCREEN BACKGROUND VIDEO ---------- */
+.welcome-bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #1a1a1a;
+  z-index: 0;
+  animation: welcomeZoom 25s ease-in-out infinite alternate;
+}
+
+@keyframes welcomeZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+/* ---------- 5. LIGHT TRANSPARENT OVERLAY ---------- */
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15); 
+  z-index: 1;
+  pointer-events: none; /* क्लिक को ब्लॉक नहीं करेगा */
+}
+
+/* ---------- 6. CENTERED CONTENT ---------- */
+.welcome-content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  gap: 28px;
+  pointer-events: none; /* क्लिक को ब्लॉक नहीं करेगा */
+}
+
+/* ---------- 7. GOLDEN "WELCOME TO" PILL ---------- */
+.welcome-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 8px 22px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  font-weight: 600;
+  color: var(--gold-light);
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  text-transform: uppercase;
+}
+
+.welcome-pill .line {
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: var(--gold-light);
+  opacity: 0.7;
+}
+
+/* ---------- 8. LARGE GLOWING GOLDEN TITLE ---------- */
+.welcome-title {
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  color: var(--gold-light);
+  max-width: 1000px;
+  text-shadow:
+    0 0 12px rgba(212, 175, 55, 0.55),
+    0 0 32px rgba(212, 175, 55, 0.45),
+    0 0 64px rgba(212, 175, 55, 0.30);
+}
+
+/* ---------- 9. GOLDEN CONTINUE BUTTON ---------- */
+.welcome-btn {
+  margin-top: 10px;
+  padding: 16px 54px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #1a1400;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 55%, #b8942b 100%);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow:
+    0 6px 22px rgba(212, 175, 55, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  pointer-events: auto; /* बटन क्लिक करने लायक रहे */
+}
+
+.welcome-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 34px rgba(212, 175, 55, 0.65);
+  filter: brightness(1.06);
+}
+
+/* ---------- 10. SMALL FOOTER LINE ---------- */
+.welcome-footer {
+  position: fixed;
+  bottom: 18px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  text-align: center;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.65);
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+/* ---------- 11. RESPONSIVE — TABLET ---------- */
+@media (max-width: 768px) {
+  .welcome-content { gap: 22px; padding: 20px; }
+  .welcome-pill { font-size: 0.72rem; letter-spacing: 0.24em; padding: 7px 18px; }
+  .welcome-btn { padding: 15px 46px; font-size: 0.95rem; letter-spacing: 0.20em; }
+}
+
+/* ---------- 12. RESPONSIVE — MOBILE ---------- */
+@media (max-width: 480px) {
+  .welcome-title { font-size: clamp(1.65rem, 8.5vw, 2.4rem); line-height: 1.3; }
+  .welcome-pill { font-size: 0.68rem; letter-spacing: 0.20em; }
+  .welcome-btn { width: 82%; max-width: 320px; padding: 15px 0; font-size: 0.92rem; }
+  .welcome-footer { font-size: 0.72rem; bottom: 14px; }
+}
+
+/* ---------- 13. REDUCED MOTION ACCESSIBILITY ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .welcome-bg-video, .welcome-title, .welcome-pill, .welcome-btn, .welcome-footer {
+    animation: none !important;
+  }
+}
