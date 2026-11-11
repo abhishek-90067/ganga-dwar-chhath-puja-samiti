@@ -27,7 +27,8 @@
       { src: "assets/images/photo6.jpg", alt: "Chhath Puja 6" },
       { src: "assets/images/photo7.jpg", alt: "Chhath Puja 7" },
       { src: "assets/images/photo8.jpg", alt: "Chhath Puja 8" },
-      { src: "assets/images/photo9.jpg", alt: "Chhath Puja 9" }
+      { src: "assets/images/photo9.jpg", alt: "Chhath Puja 9" },
+      { src: "assets/images/photo10.jpg", alt: "Chhath Puja 10" }
     ],
     audio: { crackerVolume: 0.4, voiceVolume: 1.0 },
     storageKeys: { lang: "gd_chhath_lang", theme: "gd_chhath_theme" }
